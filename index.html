@@ -4,6 +4,592 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smart-Ticketing</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700;800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@100..900&family=Poppins:wght@400;500;600;700;800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="navbar bg-base-100 lg:pl-[18%]">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li><a>Home</a></li>
+              <li><a>About</a></li>
+              <li><a>Destination</a></li>
+              <li><a>Search</a></li>
+            </ul>
+          </div>
+          <h1 class="text-4xl font-extrabold font-[Raleway] text-black">
+            P-Ticket
+          </h1>
+        </div>
+        <div class="navbar-center hidden lg:flex ml-[-18%]">
+          <ul class="menu menu-horizontal">
+            <li><a>Home</a></li>
+            <li><a>About</a></li>
+            <li><a>Destination</a></li>
+            <li><a>Search</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <a
+            class="btn bg-[#1DD1001A] lg:mr-[50%] border-2 border-[#1DD10066] text-xl text-[#1DD100] font-bold font-[Raleway] px-4"
+            >Bus <img src="images/bus-icon.png" alt=""
+          /></a>
+        </div>
+      </div>
+    </header>
+    <main id="all-remove">
+      <section
+        class="banner-section lg:min-h-screen bg-[url('/images/banner.png')] bg-no-repeat lg:mx-[18%] mt-3"
+      >
+        <div class="items-center text-center p-[10%] lg:pt-[13%] space-y-5">
+          <h2 class="lg:text-6xl font-extrabold text-white font-[Raleway]">
+            End-to-End Travel with <br />
+            <span class="text-[#1DD100]">P Paribahan</span>
+          </h2>
+          <p class="text-lg text-white font-[Inter]">
+            Secure Your Bus Tickets Online! Travel Safely and Comfortably to
+            Your Destination.
+          </p>
+          <button
+            onclick="scrollDown()"
+            class="p-5 rounded-2xl bg-[#1DD100] border-none text-black font-bold font-[Inter]"
+          >
+            Buy Tickets
+          </button>
+        </div>
+        <div class="sm:flex gap-10 justify-center invisible lg:visible">
+          <div
+            class="flex items-center gap-2 bg-white w-[22%] p-5 rounded-2xl border-b-4 border-[#1DD100]"
+          >
+            <img src="images/people.png" alt="" />
+            <div>
+              <h3 class="text-4xl font-bold text-black font-[Inter]">500k</h3>
+              <p class="text-[#03071299] font-[Inter]">Registered users</p>
+            </div>
+          </div>
+          <div
+            class="flex items-center gap-2 bg-white w-[22%] p-5 rounded-2xl border-b-4 border-[#1DD100]"
+          >
+            <img src="images/ticket-cupon.png" alt="" />
+            <div>
+              <h3 class="text-4xl font-bold text-black font-[Inter]">
+                1.7 lacks
+              </h3>
+              <p class="text-[#03071299] font-[Inter]">Tickets sold</p>
+            </div>
+          </div>
+          <div
+            class="flex items-center gap-2 bg-white w-[22%] p-5 rounded-2xl border-b-4 border-[#1DD100]"
+          >
+            <img src="images/stoppage.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <!-- Offers section -->
+      <section class="sm:px-[18%] mt-[-10%]">
+        <h1 class="text-4xl font-bold font-[Raleway] text-center mb-10">
+          Best offers for you
+        </h1>
+        <div class="sm:flex gap-10">
+          <div
+            class="bg-[#FFBF0F] flex gap-5 sm:w-[550px] h-[220px] items-center rounded-2xl"
+          >
+            <div class="p-10 pl-5">
+              <h3 class="sm:text-4xl text-[#030712CC] font-bold font-[Inter]">
+                15% OFF
+              </h3>
+              <p class="sm:text-xl font-bold font-[Inter]">
+                on your next purchase
+              </p>
+              <p class="text-lg font-[Inter] text-[#03071280]">
+                use by January 2024
+              </p>
+            </div>
+            <div>
+              <img src="images/cupon-devider.png" alt="" class="h-[220px]" />
+            </div>
+            <div class="p-15">
+              <h3 class="sm:text-3xl font-bold font-[Raleway]">NEW15</h3>
+              <p class="text-xl font-[Raleway] text-[#03071266]">Coupon Code</p>
+            </div>
+          </div>
+          <div
+            class="bg-[#F78C9C] flex gap-5 sm:w-[550px] h-[220px] items-center rounded-2xl"
+          >
+            <div class="p-10 pl-5">
+              <h3 class="sm:text-4xl text-[#030712CC] font-bold font-[Inter]">
+                20% OFF
+              </h3>
+              <p class="sm:text-xl font-bold font-[Inter]">
+                on your next purchase
+              </p>
+              <p class="text-lg font-[Inter] text-[#03071280]">
+                use by January 2024
+              </p>
+            </div>
+            <div>
+              <img src="images/cupon-devider.png" alt="" class="h-[220px]" />
+            </div>
+            <div class="p-15">
+              <h3 class="sm:text-3xl font-bold font-[Raleway]">Couple 20</h3>
+              <p class="text-xl font-[Raleway] text-[#03071266]">Coupon Code</p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="btn btn-outline btn-accent text-xl font-bold text-[#1DD100] ml-[40%] mt-10"
+        >
+          See All Offers
+        </button>
+      </section>
+      <section id="scrollIndicator" class="bg-[#F7F8F8] mt-10">
+        <div>
+          <h1>P.H Paribahan</h1>
+        </div>
+        <div class="lg:flex bg-white lg:mx-[15%] rounded-2xl">
+          <div>
+            <div class="flex gap-5 p-10">
+              <div>
+                <img src="images/bus-logo.png" alt="" />
+              </div>
+              <div>
+                <h3 class="text-3xl font-bold text-black font-[Raleway]">
+                  Greenline Paribahan
+                </h3>
+                <p>Coach-009-WEB ! AC_Business</p>
+              </div>
+              <div>
+                <button
+                  class="flex ml-[240px] bg-[#1DD1001A] text-[#1DD100] p-3 rounded-2xl items-center space-x-1"
+                >
+                  <img src="images/seat-green.png" alt="" /><span>4<span class="set-count2">0</span></span>
+                  Seats left
+                </button>
+              </div>
+            </div>
+            <div class="lg:w-[808px] h-[200px] p-5 bg-[#F7F8F8] rounded-2xl ml-5">
+              <div class="lg:flex justify-between">
+                <div class="">
+                  <p>Route</p>
+                  <p class="mt-8">Departure Time</p>
+                </div>
+
+                <div>
+                  <p>Dhaka - Sylhet</p>
+                  <p class="mt-8">9:00 PM</p>
+                </div>
+              </div>
+              <div class="space-x-2 mt-5">
+                <button
+                  class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg text-[#030712CC]"
+                >
+                  Boarding Point - Laxmipur
+                </button>
+                <button
+                  class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg text-[#030712CC]"
+                >
+                  Dropping Point - Bogura
+                </button>
+                <button
+                  class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg text-[#030712CC]"
+                >
+                  Est. Time - 11 Hour
+                </button>
+              </div>
+            </div>
+          </div>
+          <div><img src="images/info-devider.png" alt="" /></div>
+
+          <div class="m-[9%]">
+            <div class="">
+              <img src="images/fare.png" alt="" />
+            </div>
+            <h3 class="text-3xl font-bold font-[Raleway]">550 Taka</h3>
+            <p class="text-2xl font-semibold font-[Raleway]">Per Seat</p>
+          </div>
+        </div>
+        <div class=" lg:flex lg:px-[15%] ">
+          <div class="bg-white sm:ml-5 sm:pr-10 sm:p-5">
+            <div>
+              <h3 class="font-semibold text-2xl font-[Raleway]">
+                Select Your Seat
+              </h3>
+              <div class="lg:flex gap-14 border-y-2 border-dashed py-5">
+                <h2 class="lg:flex text-lg font-[Inter] text-[#03071280]">
+                  <img src="images/seat-gray.png" alt="" />Available
+                </h2>
+                <h2 class="lg:flex text-[#1DD100] text-lg font-[Inter]">
+                  <img src="images/seat-green-filled.png" alt="" />Selected
+                </h2>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-5 text-[#03071280] space-y-5 items-center space-x-5 mt-5"
+            >
+              <button
+                class="btn-lg w-28 bg-[#0307121A] font-[Inter] text-lg col-start-5"
+              >
+                <img src="images/wheel.png" alt="" />
+              </button>
+              <h4 class="text-lg font-[Inter]">A</h4>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                A1
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg js-color"
+              >
+                A2
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] js-color"
+              >
+                A3
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] js-color"
+              >
+                A4
+              </button>
+              <h4 class="text-lg font-[Inter]">B</h4>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                B1
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                B2
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                B3
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                B4
+              </button>
+              <h4 class="text-lg font-[Inter]">C</h4>
+              <button
+            
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                C1
+              </button>
+              <button
+            
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                C2
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                C3
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                C4
+              </button>
+              <h4 class="text-lg font-[Inter]">D</h4>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                D1
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                D2
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                D3
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                D4
+              </button>
+              <h4 class="text-lg font-[Inter]">E</h4>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                E1
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                E2
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                E3
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                E4
+              </button>
+              <h4 class="text-lg font-[Inter]">F</h4>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                F1
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                F2
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                F3
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                F4
+              </button>
+              <h4 class="text-lg font-[Inter]">G</h4>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                G1
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                G2
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                G3
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                G4
+              </button>
+              <h4 class="text-lg font-[Inter]">H</h4>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                H1
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                H2
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                H3
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                H4
+              </button>
+              <h4 class="text-lg font-[Inter]">I</h4>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                I1
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                I2
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                I3
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                I4
+              </button>
+              <h4 class="text-lg font-[Inter]">J</h4>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                J1
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                J2
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                J3
+              </button>
+              <button
+                class="btn btn-lg w-28 text-[#03071280] font-[Inter] text-lg"
+              >
+                J4
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-white pr-[10%] border-dashed border-l-2 pl-5">
+            <h3
+              class="font-semibold text-2xl font-[Raleway] pb-5 border-dashed border-b-2"
+            >
+              Select Your Seat
+            </h3>
+            <div class="bg-[#F7F8F8] p-9 mt-8 rounded-2xl">
+              <div>
+                <div class="">
+                  <table class="table">
+                    <!-- head -->
+                    <thead class="border-dashed border-b-2">
+                      <tr>
+                        <th class="text-black font-[Inter] font-bold text-lg">
+                          Seat <sup class="bg-[#1DD100] text-sm text-white px-4 py-1 rounded-xl set-count">0</sup>
+                        </th>
+                        <th class="text-black font-[Inter] font-bold text-lg">
+                          Class
+                        </th>
+                        <th class="text-black font-[Inter] font-bold text-lg">
+                          Price
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                     
+                      
+                    </tbody>
+                  </table>
+                  <div class=" flex justify-between py-3">
+                  <h3 class="text-black font-bold text-lg ">Total Price <h3>
+                    <h3 class="ticket-price text-black font-semibold text-lg"></h3>
+                  </div>
+                    
+                 
+              
+                 
+                </div>
+                <div class="flex">
+                  <input id="Coupon-Code"
+                    type="text"
+                    placeholder="Have any copupon?"
+                    class="border-none p-4 w-full max-w-xs rounded-s-2xl" 
+                  />
+                  
+                  <button disabled  id="apply" class="  mr-5 pr-3 max-w-xs bg-white rounded-e-2xl p-4"> <span class="bg-[#1DD100] p-2 text-white rounded-2xl font-bold">Apply</span></button>
+
+                </div>
+                <div class="flex gap-10 pt-3">
+                  <h4 class="text-black font-bold text-lg">Grand Total</h4>
+                  <h3 id="Grand-Total" class="ticket-price ml-20 text-black font-bold text-lg "></h3>
+                </div>
+              </div>
+            </div>
+            <label class="form-control w-full max-w-xs mt-5">
+              <div class="label">
+                <span class="font-semibold text-lg font-[Inter]">Passenger Name*</span>
+              </div>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                class="input input-bordered w-full max-w-xs"
+              />
+              <div class="label"></div>
+            </label>
+            <label class="form-control w-full max-w-xs">
+              <div class="label">
+                <span class="font-semibold text-lg font-[Inter]">Phone Number*</span>
+              </div>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                class="input input-bordered w-full max-w-xs"
+              />
+              <div class="label"></div>
+            </label>
+            <label class="form-control w-full max-w-xs">
+              <div class="label">
+                <span class="font-semibold text-lg font-[Inter]">Email ID</span>
+              </div>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                class="input input-bordered w-full max-w-xs"
+              />
+              <div class="label"></div>
+            </label>
+            <button onclick="allremove()" class="bg-[#1DD100] text-white w-[320px] p-3 rounded-2xl font-bold font-[Raleway] ">Next</button>
+            <div class="flex gap-10">
+              <h4 class="text-[#03071299]"><u>Terms and Conditions</u></h4>
+              <h4 class="text-[#03071299]"><u>Cancellation Policy</u></h4>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+    <section id="addSection" class="bg-gray-100 p-6 w-[717px] w-[480px] hidden m-[20%] text-center"> <div > <img src="images/success.png" alt="">
+        <h3>SUCCESS</h3>
+        <p>Thank you for Booking Our Bus Seats. <br>
+          We are working hard to find the best service and deals for you</p>
+          <p>Shortly you will find a confirmation in your email.</p>
+          <button class="btn btn-wide bg-[#27AE60] text-white">Continue</button>
+      </div>
+    </section>
+    <footer></footer>
+    <script src="js/script.js"></script>
+  </body>
 </html>
